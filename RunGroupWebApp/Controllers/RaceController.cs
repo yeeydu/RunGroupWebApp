@@ -103,7 +103,7 @@ namespace RunGroupWebApp.Controllers
                 return View("Error");
             }
 
-            // Update the properties of the existing club
+            // Update the properties of the existing race
             userRace.Title = raceEditVM.Title;
             userRace.Description = raceEditVM.Description;
             userRace.AddressId = raceEditVM.AddressId;
@@ -114,7 +114,7 @@ namespace RunGroupWebApp.Controllers
             if (raceEditVM.Image != null)
             {
                 // Optionally delete the old photo if needed
-                // await _photoService.DeletePhotoAsync(userClub.Image);
+                // await _photoService.DeletePhotoAsync(userRace.Image);
 
                 var photoResult = await _photoService.AddPhotoAsync(raceEditVM.Image);
                 userRace.Image = photoResult.Url.ToString(); // Update the image URL
@@ -125,7 +125,7 @@ namespace RunGroupWebApp.Controllers
                 userRace.Image = userRace.Image;
             }
 
-            // Update the club in the repository
+            // Update  in the repository
             _raceRepository.Update(userRace);
 
             return RedirectToAction("Races");

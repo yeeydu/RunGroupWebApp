@@ -70,7 +70,7 @@ namespace RunGroupWebApp.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var club = await _clubRepository.GetById(id);
-            if (club == null) return View("Error");
+            if (club == null) return View("Error"); 
             var clubEditVM = new EditClubViewModel
             {
                 Title = club.Title,
