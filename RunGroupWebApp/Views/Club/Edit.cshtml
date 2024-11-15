@@ -49,6 +49,9 @@
     <div class="col-md-6">
         <label asp-for="Image" class="form-label">Image</label>
         <input asp-for="Image" class="form-control" id="Image" typeof="file" placeholder="Image">
+        <div class="col-lg-2 mb-sm-0">
+            <img alt="Image" src="@Model.Image" class="rounded img-fluid" />
+        </div>
         <span asp-validation-for="Image" class="text-danger"></span>
     </div>
     <div class="col-md-12">
