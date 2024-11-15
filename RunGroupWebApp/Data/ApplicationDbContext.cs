@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RunGroupWebApp.Models;
 
 namespace RunGroupWebApp.Data
 {
-    public class ApplicationDbContext: DbContext // inherits from EF
+    public class ApplicationDbContext: IdentityDbContext<AppUser> // ApplicationDbContext: DbContext inherits from EF
     {
         // 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) 
