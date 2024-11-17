@@ -2,7 +2,7 @@
 {
     public enum ClubCategory  // change class to enum
     {
-        RoadRnner,
+        RoadRunner,
         Womens,
         City,
         Trail,
