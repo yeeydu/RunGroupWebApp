@@ -52,6 +52,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication(); // for identity framework make users authentication management
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -18,12 +18,14 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                                 <a asp-asp-controller="Race" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-sm btn-outline-secondary">View</a>
-
-                                <a asp-asp-controller="Race" asp-action="Edit" asp-route-id="@item.Id"  type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
-                                <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="Race" asp-action="Delete" asp-route-id="@item.Id">
-                                    Delete
-                                </a>
-                        </div>
+                                @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                                {
+                                    <a asp-asp-controller="Race" asp-action="Edit" asp-route-id="@item.Id"  type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                    <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="Race" asp-action="Delete" asp-route-id="@item.Id">
+                                        Delete
+                                    </a>
+                                }
+                            </div>
                         <small class="text-muted">@item.RaceCategory</small>
                     </div>
                 </div>
