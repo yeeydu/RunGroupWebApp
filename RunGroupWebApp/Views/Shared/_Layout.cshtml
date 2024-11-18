@@ -36,9 +36,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Logout</a>
-                            </li>
+                            <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
+                                <button type="submit" class="nav-link text-dark" style="border: none; background: none; cursor: pointer;">Logout</button>
+                            </form>
                         }
                         else
                         {

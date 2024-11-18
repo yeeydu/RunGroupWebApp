@@ -17,16 +17,16 @@ namespace RunGroupWebApp.Controllers
         }
         public  async Task<IActionResult> Index()
         {
-            var useRaces = await _dashboardRepository.GetAllUserRaces();
+            var userRaces = await _dashboardRepository.GetAllUserRaces();
             var userClubs = await _dashboardRepository.GetAllUserClubs();
 
             var userViewModel = new DashboardViewModel()
             {
-                Races = useRaces,
+                Races = userRaces,
                 Clubs = userClubs
             };
 
-            return View(DashboardViewModel);
+            return View(userViewModel);
         }
     }
 }

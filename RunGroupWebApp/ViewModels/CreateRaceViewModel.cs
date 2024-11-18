@@ -13,5 +13,6 @@ namespace RunGroupWebApp.ViewModels
         public RaceCategory RaceCategory { get; set; }
 
         public Address Address { get; set; }
+        public string AppUserId { get; internal set; }
     }
 }
