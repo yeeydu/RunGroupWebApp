@@ -1,4 +1,5 @@
 ﻿using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RunGroupWebApp.Data;
 using RunGroupWebApp.Interfaces;
@@ -63,10 +64,11 @@ namespace RunGroupWebApp.Controllers
                 City = user.City,
                 State = user.State,
             };
-            return View(user);
+            return View(editUserViewModel);
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> EditUserProfile(EditUserViewModel editUserVM)
         {
             if (!ModelState.IsValid)
