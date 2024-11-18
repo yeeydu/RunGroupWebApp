@@ -1,6 +1,6 @@
 ﻿@using RunGroupWebApp.Data.Enum
 @using RunGroupWebApp.ViewModels
-@model CreateClubViewModel
+@model RunGroupWebApp.ViewModels.CreateClubViewModel
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,7 +10,7 @@
 
 
 <form method="post" asp-action="Create" class="row g-3" enctype="multipart/form-data">
-    <input  type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserID"/>
+    <input  type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId"/>
     <div class="col-md-6">
         <label asp-for="Title" class="form-label">Title</label>
         <input asp-for="Title" type="text" class="form-control" id="Title">
